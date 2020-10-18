@@ -31,7 +31,7 @@ function generatePassword() {
   // Asks user if they would like uppercase characters in their password
   const doUppers = confirm('Would you like to include uppercase characters in you password?');
 
-  // Takes User Input and if input === true then it adds that specific array to a new array
+  // Takes User Input and if input true then it adds that specific array to a new array
   if (doSpecial) {
     chosenCharacters = chosenCharacters.concat(specialChar);
   }
@@ -47,7 +47,7 @@ function generatePassword() {
 
   console.log(chosenCharacters);
 
-  //Loops through New array with user chosen characters and picks 10 elements at random
+  //Loops through New array with user chosen characters and picks elements based on charLength
   for (i = 0; i < charLength; i++) {
     var randomChar = chosenCharacters[Math.floor(Math.random() * chosenCharacters.length)];
     newPassword.push(randomChar);
@@ -57,17 +57,6 @@ function generatePassword() {
   document.querySelector("#password").value = newPassword.join("");
 }
 
-
-// Write password to the #password input
-// function writePassword() {
-
-
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
 
 
 // Add event listener to generate button
